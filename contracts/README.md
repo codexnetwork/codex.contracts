@@ -5,7 +5,7 @@
 use init tool in this:
 
 ```bash
-forceio-init -project hello
+codex-init -project hello
 ```
 
 add project to CMakeLists.txt
@@ -14,7 +14,7 @@ add project to CMakeLists.txt
 add_subdirectory(hello)
 ```
 
-note the `forceio-init` is use for create a independent contract project,
+note the `codex-init` is use for create a independent contract project,
 so it need to change CMakeLists file to add project into contracts.
 
 ```cmake
@@ -22,15 +22,15 @@ project(hello)
 
 include(ExternalProject)
 # if no cdt root is given use default path
-if(FORCEIO_CDT_ROOT STREQUAL "" OR NOT FORCEIO_CDT_ROOT)
-   find_package(forceio.cdt)
+if(CODEX_CDT_ROOT STREQUAL "" OR NOT CODEX_CDT_ROOT)
+   find_package(codex.cdt)
 endif()
 
 ExternalProject_Add(
    hello_project
    SOURCE_DIR ${PROJECT_SOURCE_DIR}/src
    BINARY_DIR ${CMAKE_BINARY_DIR}/contracts/hello
-   CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE=${FORCEIO_CDT_ROOT}/lib/cmake/forceio.cdt/EosioWasmToolchain.cmake
+   CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE=${CODEX_CDT_ROOT}/lib/cmake/codex.cdt/EosioWasmToolchain.cmake
    UPDATE_COMMAND ""
    PATCH_COMMAND ""
    TEST_COMMAND ""
