@@ -4,7 +4,7 @@ message("TODO: Need Imp Contracts By CDT For Codex")
 
 project(contracts)
 
-set(EOSIO_WASM_OLD_BEHAVIOR "Off")
-find_package(forceio.cdt)
+set(CODEX_WASM_OLD_BEHAVIOR "Off")
+find_package(codex.cdt)
 
 add_subdirectory(hello)
