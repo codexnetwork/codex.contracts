@@ -7,4 +7,4 @@ project(contracts)
 set(EOSIO_WASM_OLD_BEHAVIOR "Off")
 find_package(forceio.cdt)
 
-#add_subdirectory(hello)
+add_subdirectory(hello)
